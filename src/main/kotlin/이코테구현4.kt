@@ -5,9 +5,11 @@ fun main() {
     str.map {
         if (it.isDigit()) {
             sum += it.toString().toInt()
-        } else{
+        } else {
             charList.add(it)
         }
     }
-    print(charList.sorted().joinToString("")+sum.toString())
+    val result = if (sum > 0) charList.sorted().joinToString("") + sum.toString()
+    else charList.sorted().joinToString("")
+    print(result)
 }
